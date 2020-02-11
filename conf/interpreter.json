@@ -336,17 +336,7 @@
           }
         }
       ],
-      "dependencies": [
-        {
-          "groupArtifactVersion": "org.apache.hive:hive-jdbc:3.1.2",
-          "local": false
-        },
-        {
-          "groupArtifactVersion": "org.apache.hadoop:hadoop-common:3.2.0",
-          "local": false,
-          "exclusions": []
-        }
-      ],
+      "dependencies": [],
       "option": {
         "remote": true,
         "port": -1,

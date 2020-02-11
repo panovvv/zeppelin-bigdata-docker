@@ -12,13 +12,16 @@ RUN curl --progress-bar -L --retry 3 \
   | gunzip \
   | tar x -C /usr/ \
  && mv /usr/${ZEPPELIN_PACKAGE} ${ZEPPELIN_HOME} \
- && chown -R root:root ${ZEPPELIN_HOME}
+ && chown -R root:root ${ZEPPELIN_HOME} \
+ && cp ${HIVE_HOME}/jdbc/hive-jdbc-${HIVE_VERSION}-standalone.jar ${ZEPPELIN_HOME}/interpreter/jdbc
 
 ENV MASTER=yarn-client
 ENV PATH="${PATH}:${ZEPPELIN_HOME}/bin"
 ENV ZEPPELIN_CONF_DIR ${ZEPPELIN_HOME}/conf
 COPY conf/interpreter.json ${ZEPPELIN_CONF_DIR}
 ENV ZEPPELIN_ADDR=0.0.0.0
+ENV ZEPPELIN_PORT=8890
+ENV ZEPPELIN_NOTEBOOK_DIR='/zeppelin_notebooks'
 
 # Clean up
 RUN rm -rf ${ZEPPELIN_HOME}/interpreter/alluxio \
