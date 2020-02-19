@@ -26,5 +26,5 @@ Increasing memory to 8G solved all those mysterious problems for me.
 
 ## Maintaining
 
-* Docker file code linting:  `run --rm -i hadolint/hadolint < Dockerfile`
+* Docker file code linting:  `docker run --rm -i hadolint/hadolint < Dockerfile`
 * [To trim the fat from Docker image](https://github.com/wagoodman/dive)
