@@ -1,10 +1,10 @@
-#FROM bigdata-docker-compose_master:latest
-FROM panovvv/hadoop-hive-spark:2.5
+FROM bigdata-docker-compose_master:latest
+#FROM panovvv/hadoop-hive-spark:2.5.1
 
 # https://github.com/hadolint/hadolint/wiki/DL4006
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-ARG ZEPPELIN_VERSION=0.8.2
+ARG ZEPPELIN_VERSION=0.9.0
 ENV ZEPPELIN_HOME /usr/zeppelin
 ENV ZEPPELIN_PACKAGE "zeppelin-${ZEPPELIN_VERSION}-bin-all"
 RUN curl --progress-bar -L --retry 3 \
