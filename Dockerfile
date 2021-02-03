@@ -1,5 +1,5 @@
-FROM bigdata-docker-compose_master:latest
-#FROM panovvv/hadoop-hive-spark:2.5.1
+#FROM bigdata-docker-compose_master:latest
+FROM panovvv/hadoop-hive-spark:2.5.2
 
 # https://github.com/hadolint/hadolint/wiki/DL4006
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
